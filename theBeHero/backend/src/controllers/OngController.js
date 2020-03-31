@@ -3,7 +3,7 @@ const crypto = require("crypto");
 
 module.exports = {
   async create(req, res) {
-    const { name, email, whatsapp, city, uf } = req.body;
+    const { name, email, whatsApp, city, uf } = req.body;
 
     const id = crypto.randomBytes(4).toString("HEX");
 
@@ -11,7 +11,7 @@ module.exports = {
       id,
       name,
       email,
-      whatsapp,
+      whatsApp,
       city,
       uf
     });
