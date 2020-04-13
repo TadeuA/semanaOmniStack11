@@ -9,7 +9,7 @@ module.exports = {
       title,
       description,
       value,
-      ong_id
+      ong_id,
     });
 
     return res.json({ id });
@@ -51,10 +51,8 @@ module.exports = {
       return res.status(401).json({ error: "operation not permimitted." });
     }
 
-    await connection("incidents")
-      .where("id", id)
-      .delete();
+    await connection("incidents").where("id", id).delete();
 
     return res.status(204).send();
-  }
+  },
 };
